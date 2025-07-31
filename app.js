@@ -54,6 +54,11 @@ app.get("/posts", (req, res) => {
   ];
 });
 
+// definisco la rotta bacheca
+app.get("/bacheca", (req, res) => {
+  res.json(posts);
+});
+
 // dico al server di rimanere in ascolto sulla porta 3000
 app.listen(port, () => {
   console.log(`Server della pizzeria in ascolto sulla porta ${port}`);
