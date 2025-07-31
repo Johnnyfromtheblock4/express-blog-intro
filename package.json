@@ -12,5 +12,13 @@
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johnnyfromtheblock4/express-blog-intro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Johnnyfromtheblock4/express-blog-intro/issues"
+  },
+  "homepage": "https://github.com/Johnnyfromtheblock4/express-blog-intro#readme"
 }

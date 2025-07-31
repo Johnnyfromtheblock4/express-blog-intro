@@ -25,7 +25,7 @@ app.get("/posts", (req, res) => {
       tags: ["welcome", "benvenuto", "welcome aboard", "benvenuto a bordo"],
     },
     {
-      titolo: "Gitingore",
+      titolo: "Gitignore",
       contenuto: "Come nascondere i file a github",
       image: "/imgs/gitignore.png",
       tags: ["git", "github", "ignore"],
@@ -52,6 +52,8 @@ app.get("/posts", (req, res) => {
       tags: ["file statici", "html", "json", "css"],
     },
   ];
+  // restituisco l'array contenente il menù
+  res.json(posts);
 });
 
 // definisco la rotta bacheca
