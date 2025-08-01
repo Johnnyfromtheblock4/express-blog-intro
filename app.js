@@ -16,7 +16,15 @@ app.get("/", (req, res) => {
 });
 
 //definisco la rotta dei post
-app.get("/posts", (req, res) => {
+app.get("/bacheca", (req, res) => {
+  // const param = req.query;
+  // console.log(param);
+
+  // const title = param.title;
+
+  //con reconstructuring
+  const { title } = req.query;
+
   const posts = [
     {
       title: "Welcome",
@@ -52,13 +60,21 @@ app.get("/posts", (req, res) => {
       tags: ["file statici", "html", "json", "css"],
     },
   ];
-  // restituisco l'array contenente il menù
-  res.json(posts);
-});
 
-// definisco la rotta bacheca
-app.get("/bacheca", (req, res) => {
-  res.json(posts);
+  let filteredPosts;
+  //eseguo un controllo per verificare se title è definito o meno
+  if (title != undefined) {
+    filteredPosts = posts.filter((item) => {
+      return item.title === title;
+    });
+  } else {
+    filteredPosts = posts;
+  }
+  // con operatore ternario
+  // let filteredPosts = title != undefined ? posts.filter(item => item.title === title) : posts;
+
+  // restituisco l'array contenente il menù
+  res.json(filteredPosts);
 });
 
 // dico al server di rimanere in ascolto sulla porta 3000
